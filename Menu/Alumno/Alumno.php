@@ -7,7 +7,6 @@
     
   }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -15,85 +14,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumno</title>
-
-    <link rel="stylesheet" href="./alumno.css">
-
+    <title>Sistema Educativo</title>
+    <link rel="stylesheet" href="alumno.css">
 </head>
 <body>
-
-<script src="./alumno.js" defer></script>
-    
     <header>
-        <h1>
-            Sistema Escolar
-            <?php
-                echo $_COOKIE['tipo'];
-            ?>
-
-        </h1>
-
+        <h1>Sistema Educativo</h1>
         <div class="user-info">
-
-            <?php
-                echo "<span>Bienvenido ".$_COOKIE['nombre']."</span>";
-            ?>
-
+            <span>Bienvenido, David</span>
             <div class="user-avatar">D</div>
         </div>
     </header>
 
     <nav>
         <div class="nav-container">
-            <!-- Botón 1 con menú desplegable y submenú -->
+            <!-- Botón Principal -->
             <div class="contenedor-boton">
                 <button class="boton-principal">
-                    <span>Opciones Académicas</span>
+                    <span>Principal</span>
                     <span class="menu-icon">▼</span>
                 </button>
-                <div class="menu-desplegable" id="menu1">
-                    <button class="boton-secundario" onclick="toggleSubMenu('submenu1', this)">
-                        <span>Perfil</span>
-                        <span>▶</span>
-                    </button>
-                    <div class="submenu-anidado" id="submenu1">
-                        <button class="boton-terciario">Datos Personales</button>
-                        <button class="boton-terciario">Historial Médico</button>
-                        <button class="boton-terciario">Contacto de Emergencia</button>
-                    </div>
-                    <button class="boton-secundario" onclick="toggleSubMenu('submenu2', this)">
-                        <span>Trayectoria</span>
-                        <span>▶</span>
-                    </button>
-                    <div class="submenu-anidado" id="submenu2">
-                        <button class="boton-terciario">Historial Académico</button>
-                        <button class="boton-terciario">Logros</button>
-                        <button class="boton-terciario">Proyectos</button>
-                    </div>
+                <div class="menu-desplegable">
+                    <button class="boton-secundario">Menú principal</button>
                 </div>
             </div>
             
-            <!-- Botón 2 con menú desplegable -->
+            <!-- Botón Perfil -->
             <div class="contenedor-boton">
                 <button class="boton-principal">
-                    <span>Servicios Escolares</span>
+                    <span>Perfil</span>
                     <span class="menu-icon">▼</span>
                 </button>
-                <div class="menu-desplegable" id="menu2">
-                    <button class="boton-secundario">Inscripción a Cursos</button>
-                    <button class="boton-secundario">Constancias</button>
-                    <button class="boton-secundario">Pagos en Línea</button>
-                    <button class="boton-secundario">Biblioteca Virtual</button>
+                <div class="menu-desplegable">
+                    <button class="boton-secundario">Consultar</button>
+                    <button class="boton-secundario">Editar</button>
+                </div>
+            </div>
+            
+            <!-- Botón Bloques -->
+            <div class="contenedor-boton">
+                <button class="boton-principal">
+                    <span>Bloques</span>
+                    <span class="menu-icon">▼</span>
+                </button>
+                <div class="menu-desplegable">
+                    <button class="boton-secundario">Bloque 1</button>
+                    <button class="boton-secundario">Bloque 2</button>
+                    <button class="boton-secundario">Bloque 3</button>
+                </div>
+            </div>
+            
+            <!-- Botón Recursos -->
+            <div class="contenedor-boton">
+                <button class="boton-principal">
+                    <span>Recursos</span>
+                    <span class="menu-icon">▼</span>
+                </button>
+                <div class="menu-desplegable">
+                    <button class="boton-secundario">Libros</button>
+                    <button class="boton-secundario">Exámenes</button>
+                    <button class="boton-secundario">Calificaciones</button>
+                </div>
+            </div>
+            
+            <!-- Botón Prácticas -->
+            <div class="contenedor-boton">
+                <button class="boton-principal">
+                    <span>Prácticas</span>
+                    <span class="menu-icon">▼</span>
+                </button>
+                <div class="menu-desplegable">
+                    <button class="boton-secundario">Libros</button>
+                    <button class="boton-secundario">Exámenes</button>
+                    <button class="boton-secundario">Calificaciones</button>
+                </div>
+            </div>
+            
+            <!-- Botón Sesión -->
+            <div class="contenedor-boton">
+                <button class="boton-principal">
+                    <span>Sesión</span>
+                    <span class="menu-icon">▼</span>
+                </button>
+                <div class="menu-desplegable">
+                    <button class="boton-secundario">Cerrar sesión</button>
+                </div>
+            </div>
+            
+            <!-- Botón Ayuda -->
+            <div class="contenedor-boton">
+                <button class="boton-principal">
+                    <span>Ayuda</span>
+                    <span class="menu-icon">▼</span>
+                </button>
+                <div class="menu-desplegable">
+                    <button class="boton-secundario">Contáctanos</button>
+                    <button class="boton-secundario">Búsqueda</button>
                 </div>
             </div>
         </div>
-
     </nav>
 
     <main class="main-content">
-        <!-- Contenido principal puede ir aquí -->
+        <!-- Contenido principal -->
+        <div class="bienvenida">
+            <h2>Bienvenido al Sistema Educativo</h2>
+            <p>Seleccione una opción del menú superior para comenzar</p>
+        </div>
     </main>
 
+    <script src="alumno.js" defer></script>
 </body>
-
 </html>

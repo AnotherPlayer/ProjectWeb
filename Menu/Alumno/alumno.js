@@ -1,61 +1,61 @@
-// Mostrar/ocultar menús al hacer clic en los botones principales
-document.querySelectorAll('.boton-principal').forEach(boton => {
-    boton.addEventListener('click', function() {
-
-        const menu = this.nextElementSibling;
-        
-        // Cerrar todos los otros menús
-        document.querySelectorAll('.menu-desplegable').forEach(m => {
-            if (m !== menu) {
-                m.classList.remove('mostrar');
-            }
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurar eventos para los botones principales
+    const botonesPrincipales = document.querySelectorAll('.boton-principal');
+    
+    botonesPrincipales.forEach(boton => {
+        boton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const menuDesplegable = this.nextElementSibling;
+            
+            // Cerrar otros menús abiertos
+            document.querySelectorAll('.menu-desplegable').forEach(menu => {
+                if (menu !== menuDesplegable) {
+                    menu.classList.remove('mostrar');
+                }
+            });
+            
+            // Alternar el menú actual
+            menuDesplegable.classList.toggle('mostrar');
+            
+            // Actualizar icono
+            const icono = this.querySelector('.menu-icon');
+            icono.textContent = menuDesplegable.classList.contains('mostrar') ? '▲' : '▼';
         });
-        
-        // Alternar el menú actual
-        menu.classList.toggle('mostrar');
     });
-});
 
-// Función para mostrar/ocultar submenús anidados
-function toggleSubMenu(idSubmenu, boton) {
-    // Cerrar otros submenús del mismo menú
-    const menuPadre = boton.parentElement;
-    menuPadre.querySelectorAll('.submenu-anidado').forEach(submenu => {
-        if (submenu.id !== idSubmenu) {
-            submenu.classList.remove('mostrar-submenu');
-        }
+    // Configurar eventos para los botones secundarios
+    const botonesSecundarios = document.querySelectorAll('.boton-secundario');
+    
+    botonesSecundarios.forEach(boton => {
+        boton.addEventListener('click', function() {
+            // Aquí puedes agregar la funcionalidad específica para cada botón
+            console.log('Seleccionado:', this.textContent);
+            
+            // Ejemplo: Cerrar el menú después de seleccionar una opción
+            this.closest('.menu-desplegable').classList.remove('mostrar');
+            const botonPrincipal = this.closest('.contenedor-boton').querySelector('.boton-principal');
+            botonPrincipal.querySelector('.menu-icon').textContent = '▼';
+            
+            // Mostrar contenido según la opción seleccionada
+            mostrarContenido(this.textContent);
+        });
     });
-    
-    // Alternar el submenú clickeado
-    const submenu = document.getElementById(idSubmenu);
-    submenu.classList.toggle('mostrar-submenu');
-    
-    // Cambiar el icono de flecha
-    const icono = boton.querySelector('span:last-child');
-    icono.textContent = submenu.classList.contains('mostrar-submenu') ? '▼' : '▶';
-}
 
-// Cerrar menús al hacer clic fuera de ellos
-document.addEventListener('click', function(event) {
-    if (!event.target.closest('.contenedor-boton')) {
-        document.querySelectorAll('.menu-desplegable').forEach(menu => {
+    // Cerrar menús al hacer clic fuera de ellos
+    document.addEventListener('click', function() {
+        botonesPrincipales.forEach(boton => {
+            const menu = boton.nextElementSibling;
             menu.classList.remove('mostrar');
+            boton.querySelector('.menu-icon').textContent = '▼';
         });
-        
-        document.querySelectorAll('.submenu-anidado').forEach(submenu => {
-            submenu.classList.remove('mostrar-submenu');
-        });
-        
-        // Restaurar iconos de flecha
-        document.querySelectorAll('.boton-secundario span:last-child').forEach(icono => {
-            icono.textContent = '▶';
-        });
-    }
-});
-// Asignar funcionalidad a los botones
-document.querySelectorAll('.boton-terciario').forEach(boton => {
-    boton.addEventListener('click', function() {
-        alert('Has seleccionado: ' + this.textContent);
-        // Aquí puedes agregar la acción específica para cada botón
     });
+
+    // Función para mostrar contenido según la opción seleccionada
+    function mostrarContenido(opcion) {
+        const mainContent = document.querySelector('.main-content');
+        mainContent.innerHTML = `
+            <h2>${opcion}</h2>
+            <p>Contenido relacionado con ${opcion.toLowerCase()}</p>
+        `;
+    }
 });

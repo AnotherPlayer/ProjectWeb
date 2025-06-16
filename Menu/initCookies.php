@@ -5,6 +5,7 @@
     $boleta = $_POST['boleta'];
     $password = $_POST['password'];
     $tipo = $_POST['tipo'];
+    $minutos = 60;
 
     $query = "SELECT * FROM $tipo WHERE boleta = $boleta AND contraseña = '$password'";
     $result = $conexion->query($query);
@@ -13,8 +14,8 @@
     if (mysqli_num_rows($result) > 0) {
 
         $row = $result->fetch_assoc();
-        setcookie("nombre", $row['nombre'], time() + (60*2), "/");
-        setcookie("tipo", $tipo, time() + (60*2), "/");
+        setcookie("nombre", $row['nombre'], time() + (60*$minutos), "/");
+        setcookie("tipo", $tipo, time() + (60*$minutos), "/");
         header("Location: ./$tipo/$tipo.php");
 
     }

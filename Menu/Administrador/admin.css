@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
@@ -8,19 +9,20 @@ body {
     min-height: 100vh;
 }
 
+/* Header */
 header {
     background-color: #2c3e50;
     color: white;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .user-info {
@@ -30,8 +32,8 @@ header h1 {
 }
 
 .user-avatar {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     background-color: #3498db;
     border-radius: 50%;
     display: flex;
@@ -41,6 +43,7 @@ header h1 {
     font-weight: bold;
 }
 
+/* Navegación */
 nav {
     background-color: #3498db;
     padding: 10px 20px;
@@ -49,12 +52,8 @@ nav {
 
 .nav-container {
     display: flex;
-    gap: 20px;
-}
-
-.main-content {
-    flex: 1;
-    padding: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .contenedor-boton {
@@ -65,17 +64,24 @@ nav {
     background-color: #2980b9;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px 15px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 120px;
     transition: all 0.3s;
-    min-width: 180px;
-    text-align: left;
 }
 
 .boton-principal:hover {
     background-color: #1a6ea0;
+}
+
+.menu-icon {
+    margin-left: 8px;
+    font-size: 0.7rem;
 }
 
 .menu-desplegable {
@@ -83,27 +89,28 @@ nav {
     top: 100%;
     left: 0;
     background-color: white;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     z-index: 10;
     display: none;
-    overflow: hidden;
+}
+
+.menu-desplegable.mostrar {
+    display: block;
 }
 
 .boton-secundario {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     width: 100%;
-    padding: 10px;
+    padding: 8px 15px;
     background-color: #f8f9fa;
     border: none;
     text-align: left;
     cursor: pointer;
     transition: all 0.2s;
-    border-bottom: 1px solid #e9ecef;
     color: #2c3e50;
+    border-bottom: 1px solid #e9ecef;
 }
 
 .boton-secundario:last-child {
@@ -114,38 +121,138 @@ nav {
     background-color: #e9ecef;
 }
 
-.mostrar {
-    display: block;
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.3s ease;
 }
 
-/* Estilos para el submenú anidado */
-.submenu-anidado {
-    display: none;
-    background-color: #e9ecef;
+.main-content.cargando {
+    opacity: 0.6;
 }
 
-.boton-terciario {
-    display: block;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #e9ecef;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.2s;
+.bienvenida {
+    text-align: center;
+    padding: 20px;
+}
+
+.bienvenida h2 {
     color: #2c3e50;
-    font-size: 14px;
+    margin-bottom: 10px;
 }
 
-.boton-terciario:hover {
-    background-color: #d6d8db;
+.bienvenida p {
+    color: #7f8c8d;
 }
 
-.mostrar-submenu {
+/* Estilos para la carga de contenido */
+.loader {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.error-contenido {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffebee;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-contenido button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Estilos para formularios y botones en el contenido */
+.formulario-contenido {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
     display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
-.menu-icon {
-    margin-left: 10px;
-    font-size: 12px;
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.boton-accion {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.boton-accion:hover {
+    background-color: #219653;
+}
+
+.boton-accion.secundario {
+    background-color: #95a5a6;
+}
+
+.boton-accion.secundario:hover {
+    background-color: #7f8c8d;
+}
+
+/* Estilos para tablas */
+.tabla-contenido {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla-contenido th,
+.tabla-contenido td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabla-contenido th {
+    background-color: #3498db;
+    color: white;
+}
+
+.tabla-contenido tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabla-contenido tr:hover {
+    background-color: #e9ecef;
 }

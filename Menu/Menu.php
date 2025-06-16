@@ -38,7 +38,7 @@
     </div>
 
     <div class="menu-item">
-      <button class="menu-button">Acerca de</button>
+      <button class="menu-button" onclick="window.location.href='./about/equipo.html'">Acerca de</button>
     </div>
 
     <div class="menu-item">
@@ -60,8 +60,8 @@
     <div class="menu-item">
       <button class="menu-button">Ayuda</button>
       <div class="submenu">
-        <a href="#">Tutoriales</a>
-        <a href="#">Foro</a>
+        <a href="#">Manual de usuario</a>
+        <a href="#">Busqueda</a>
       </div>
     </div>
   </nav>
