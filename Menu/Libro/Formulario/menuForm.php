@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú asociación</title>
+    <title>Menú de Unidades - Rompecabezas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,7 +62,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Ejercicios de Asociacion de columnas</h1>
+        <h1>Ejercicios de Rompecabezas</h1>
         <div class="menu" id="menu-unidades">
             <!-- Botones se generarán aquí con JavaScript -->
         </div>
@@ -80,7 +80,7 @@
                 
                 // Redirigir al hacer clic (cambia la ruta si es necesario)
                 boton.onclick = () => {
-                    window.location.href = `./Trayect${i}/match.html`; // Cambia esto si tus archivos tienen otro nombre
+                    window.location.href = `unidad${i}.html`; // Cambia esto si tus archivos tienen otro nombre
                     // Alternativa: alert(`Ir a la Unidad ${i}`); // Para pruebas sin crear páginas
                 };
 
@@ -89,4 +89,5 @@
         });
     </script>
 </body>
+
 </html>

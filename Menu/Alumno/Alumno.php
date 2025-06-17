@@ -11,10 +11,11 @@
 
 <!DOCTYPE html>
 <html lang="es">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido Alumno</title>
+    <title>Alumno</title>
     
     <style>
 
@@ -157,7 +158,6 @@ nav {
                         <div class="nested-menu">
                             <button class="menu-option">Libro resolver</button>
                             <div class="nested-menu-content">
-                                <button class="menu-option">Drag and drop</button>
                                 <button class="menu-option">Rompecabezas</button>
                                 <button class="menu-option">Asociar columnas</button>
                             </div>
@@ -175,7 +175,6 @@ nav {
                         <div class="nested-menu">
                             <button class="menu-option">Libro resolver</button>
                             <div class="nested-menu-content">
-                                <button class="menu-option">Drag and drop</button>
                                 <button class="menu-option">Rompecabezas</button>
                                 <button class="menu-option">Asociar columnas</button>
                             </div>
@@ -193,7 +192,6 @@ nav {
                         <div class="nested-menu">
                             <button class="menu-option">Libro resolver</button>
                             <div class="nested-menu-content">
-                                <button class="menu-option" onclick="window.location.href='./../Libro/dragDrop/menuDrag.php'">Drag and drop</button>
                                 <button class="menu-option" onclick="window.location.href='./../Libro/Rompecabezas/menuPuzzles.php'">Rompecabezas</button>
                                 <button class="menu-option" onclick="window.location.href='./../Libro/matchColumn/menuMatch.php'">Asociar columnas</button>
                             </div>
@@ -239,5 +237,9 @@ nav {
             </div>
         </div>
     </nav>
+
+
+
 </body>
+
 </html>
