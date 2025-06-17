@@ -112,15 +112,17 @@ nav {
     </style>
 
 </head>
+
 <body>
+
     <header>
         <h1>
 
         <?php 
             // Mostrar el nombre del usuario almacenado en la cookie
-            if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo'])) {
+            if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo']))
                 echo "Bienvenido ".$_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
-            }
+            
         ?>
 
         </h1>
@@ -191,12 +193,14 @@ nav {
                         <div class="nested-menu">
                             <button class="menu-option">Libro resolver</button>
                             <div class="nested-menu-content">
-                                <button class="menu-option">Drag and drop</button>
-                                <button class="menu-option">Rompecabezas</button>
-                                <button class="menu-option">Asociar columnas</button>
+                                <button class="menu-option" onclick="window.location.href='./../Libro/dragDrop/menuDrag.php'">Drag and drop</button>
+                                <button class="menu-option" onclick="window.location.href='./../Libro/Rompecabezas/menuPuzzles.php'">Rompecabezas</button>
+                                <button class="menu-option" onclick="window.location.href='./../Libro/matchColumn/menuMatch.php'">Asociar columnas</button>
                             </div>
                         </div>
-                        <button class="menu-option">Libro descargable</button>
+                        <a href="./../Libro/Descargar/LibroWeb.pdf" download="LibroWeb.pdf">
+                            <button class="menu-option">Libro descargable</button>
+                        </a>
                         <button class="menu-option">Videos locales</button>
                         <button class="menu-option">Prácticas</button>
                     </div>
@@ -208,7 +212,7 @@ nav {
         <div class="menu-button">
             <button class="dropdown-button">Recursos</button>
             <div class="dropdown-content">
-                <button class="menu-option">Libro</button>
+                <button class="menu-option" onclick="window.location.href='./../Libro/MenuLibro/Menu.html'">Libro</button>
                 <button class="menu-option">Exámenes</button>
                 <button class="menu-option">Calificaciones</button>
             </div>
