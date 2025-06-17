@@ -16,12 +16,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido Alumno</title>
     
-    <link rel="stylesheet" href="./alumno.css">
+    <style>
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 0;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background-color: #d1d9ff;
+    border-bottom: 1px solid #b3b8e5;
+    flex-wrap: wrap;
+}
+
+.menu-button {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button, .menu-option {
+    background-color: #5c6bc0;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    min-width: 100px;
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin: 2px 0;
+}
+
+.dropdown-button:hover, .menu-option:hover {
+    background-color: #3f51b5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menu-button:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos para menús anidados con botones */
+.nested-menu {
+    position: relative;
+}
+
+.nested-menu-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 2;
+    padding: 5px;
+}
+
+.dropdown-content .nested-menu:hover > .nested-menu-content {
+    display: block;
+}
+
+.nested-menu > .menu-option::after {
+    content: " ▶";
+    float: right;
+    font-size: 0.8em;
+}
+
+    </style>
 
 </head>
 <body>
     <header>
-        <h1>Bienvenido Alumno David</h1>
+        <h1>
+
+        <?php 
+            // Mostrar el nombre del usuario almacenado en la cookie
+            if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo'])) {
+                echo "Bienvenido ".$_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
+            }
+        ?>
+
+        </h1>
     </header>
     
     <nav>
@@ -29,7 +131,7 @@
         <div class="menu-button">
             <button class="dropdown-button">Principal</button>
             <div class="dropdown-content">
-                <a href="#">Menú principal</a>
+                <button class="menu-option">Menú principal</button>
             </div>
         </div>
         
@@ -37,8 +139,8 @@
         <div class="menu-button">
             <button class="dropdown-button">Perfil</button>
             <div class="dropdown-content">
-                <a href="#">Consultar</a>
-                <a href="#">Editar</a>
+                <button class="menu-option">Consultar</button>
+                <button class="menu-option">Editar</button>
             </div>
         </div>
         
@@ -48,55 +150,55 @@
             <div class="dropdown-content">
                 <!-- Bloque 1 -->
                 <div class="nested-menu">
-                    <a href="#">Bloque 1</a>
+                    <button class="menu-option">Bloque 1</button>
                     <div class="nested-menu-content">
                         <div class="nested-menu">
-                            <a href="#">Libro resolver</a>
+                            <button class="menu-option">Libro resolver</button>
                             <div class="nested-menu-content">
-                                <a href="#">Drag and drop</a>
-                                <a href="#">Rompecabezas</a>
-                                <a href="#">Asociar columnas</a>
+                                <button class="menu-option">Drag and drop</button>
+                                <button class="menu-option">Rompecabezas</button>
+                                <button class="menu-option">Asociar columnas</button>
                             </div>
                         </div>
-                        <a href="#">Libro descargable</a>
-                        <a href="#">Videos locales</a>
-                        <a href="#">Prácticas</a>
+                        <button class="menu-option">Libro descargable</button>
+                        <button class="menu-option">Videos locales</button>
+                        <button class="menu-option">Prácticas</button>
                     </div>
                 </div>
                 
                 <!-- Bloque 2 -->
                 <div class="nested-menu">
-                    <a href="#">Bloque 2</a>
+                    <button class="menu-option">Bloque 2</button>
                     <div class="nested-menu-content">
                         <div class="nested-menu">
-                            <a href="#">Libro resolver</a>
+                            <button class="menu-option">Libro resolver</button>
                             <div class="nested-menu-content">
-                                <a href="#">Drag and drop</a>
-                                <a href="#">Rompecabezas</a>
-                                <a href="#">Asociar columnas</a>
+                                <button class="menu-option">Drag and drop</button>
+                                <button class="menu-option">Rompecabezas</button>
+                                <button class="menu-option">Asociar columnas</button>
                             </div>
                         </div>
-                        <a href="#">Libro descargable</a>
-                        <a href="#">Videos locales</a>
-                        <a href="#">Prácticas</a>
+                        <button class="menu-option">Libro descargable</button>
+                        <button class="menu-option">Videos locales</button>
+                        <button class="menu-option">Prácticas</button>
                     </div>
                 </div>
                 
                 <!-- Bloque 3 -->
                 <div class="nested-menu">
-                    <a href="#">Bloque 3</a>
+                    <button class="menu-option">Bloque 3</button>
                     <div class="nested-menu-content">
                         <div class="nested-menu">
-                            <a href="#">Libro resolver</a>
+                            <button class="menu-option">Libro resolver</button>
                             <div class="nested-menu-content">
-                                <a href="#">Drag and drop</a>
-                                <a href="#">Rompecabezas</a>
-                                <a href="#">Asociar columnas</a>
+                                <button class="menu-option">Drag and drop</button>
+                                <button class="menu-option">Rompecabezas</button>
+                                <button class="menu-option">Asociar columnas</button>
                             </div>
                         </div>
-                        <a href="#">Libro descargable</a>
-                        <a href="#">Videos locales</a>
-                        <a href="#">Prácticas</a>
+                        <button class="menu-option">Libro descargable</button>
+                        <button class="menu-option">Videos locales</button>
+                        <button class="menu-option">Prácticas</button>
                     </div>
                 </div>
             </div>
@@ -106,26 +208,30 @@
         <div class="menu-button">
             <button class="dropdown-button">Recursos</button>
             <div class="dropdown-content">
-                <a href="#">Libro</a>
-                <a href="#">Exámenes</a>
-                <a href="#">Calificaciones</a>
+                <button class="menu-option">Libro</button>
+                <button class="menu-option">Exámenes</button>
+                <button class="menu-option">Calificaciones</button>
             </div>
         </div>
         
         <!-- Botón Sesión -->
         <div class="menu-button">
             <button class="dropdown-button">Sesión</button>
-            <div class="dropdown-content">
-                <a href="#">Cerrar sesión</a>
-            </div>
+            <form action="./../deleteCookies.php" method="post">
+
+                <div class="dropdown-content">
+                    <button class="menu-option">Cerrar sesión</button>
+                </div>
+
+            </form>
         </div>
         
         <!-- Botón Ayuda -->
         <div class="menu-button">
             <button class="dropdown-button">Ayuda</button>
             <div class="dropdown-content">
-                <a href="#">Manual de usuario</a>
-                <a href="#">Búsqueda</a>
+                <button class="menu-option">Manual de usuario</button>
+                <button class="menu-option">Búsqueda</button>
             </div>
         </div>
     </nav>

@@ -5,7 +5,7 @@
     $boleta = $_POST['boleta'];
     $password = $_POST['password'];
     $tipo = $_POST['tipo'];
-    $minutos = 60;
+    $minutos = 5;
 
     $query = "SELECT * FROM $tipo WHERE boleta = $boleta AND contraseña = '$password'";
     $result = $conexion->query($query);

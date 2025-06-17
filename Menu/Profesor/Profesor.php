@@ -16,12 +16,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido Alumno</title>
     
-    <link rel="stylesheet" href="./profe.css">
+  <link rel="stylesheet" href="profe.css">
 
 </head>
 <body>
+    
     <header>
-        <h1>Bienvenido Alumno David</h1>
+        <h1>
+
+        <?php 
+            // Mostrar el nombre del usuario almacenado en la cookie
+            if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo'])) {
+                echo "Bienvenido ".$_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
+            }
+        ?>
+
+        </h1>
     </header>
     
     <nav>
@@ -29,7 +39,7 @@
         <div class="menu-button">
             <button class="dropdown-button">Principal</button>
             <div class="dropdown-content">
-                <a href="#">Menú principal</a>
+                <button class="menu-option">Menú principal</button>
             </div>
         </div>
         
@@ -37,8 +47,8 @@
         <div class="menu-button">
             <button class="dropdown-button">Perfil</button>
             <div class="dropdown-content">
-                <a href="#">Consultar</a>
-                <a href="#">Editar</a>
+                <button class="menu-option">Consultar</button>
+                <button class="menu-option">Editar</button>
             </div>
         </div>
         
@@ -46,8 +56,8 @@
         <div class="menu-button">
             <button class="dropdown-button">Grupo</button>
             <div class="dropdown-content">
-                <a href="#">Grupo</a>
-                <a href="#">Alumno</a>
+                <button class="menu-option">Grupo</button>
+                <button class="menu-option">Alumno</button>
             </div>
         </div>
         
@@ -55,10 +65,10 @@
         <div class="menu-button">
             <button class="dropdown-button">Recursos</button>
             <div class="dropdown-content">
-                <a href="#">Libro</a>
-                <a href="#">Videos</a>
-                <a href="#">Audios</a>
-                <a href="#">Diapositivas</a>
+                <button class="menu-option">Libro</button>
+                <button class="menu-option">Videos</button>
+                <button class="menu-option">Audios</button>
+                <button class="menu-option">Diapositivas</button>
             </div>
         </div>
         
@@ -66,29 +76,31 @@
         <div class="menu-button">
             <button class="dropdown-button">Evaluación</button>
             <div class="dropdown-content">
-                <a href="#">Preguntas</a>
-                <a href="#">Plantilla actividades</a>
+                <button class="menu-option">Preguntas</button>
+                <button class="menu-option">Plantilla actividades</button>
             </div>
         </div>
         
         <!-- Botón Sesión -->
         <div class="menu-button">
             <button class="dropdown-button">Sesión</button>
-            <div class="dropdown-content">
-                <a href="#">Cerrar sesión</a>
-            </div>
+            <form action="./../deleteCookies.php" method="post">
+
+                <div class="dropdown-content">
+                    <button class="menu-option">Cerrar sesión</button>
+                </div>
+
+            </form>
         </div>
         
         <!-- Botón Ayuda -->
         <div class="menu-button">
             <button class="dropdown-button">Ayuda</button>
             <div class="dropdown-content">
-                <a href="#">Manual de usuario</a>
-                <a href="#">Búsqueda</a>
+                <button class="menu-option">Manual de usuario</button>
+                <button class="menu-option">Búsqueda</button>
             </div>
         </div>
     </nav>
-
 </body>
-
 </html>
