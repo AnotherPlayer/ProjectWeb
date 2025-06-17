@@ -14,105 +14,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Administrativo</title>
-    <link rel="stylesheet" href="./admincal.css">
+    <title>Bienvenido Alumno</title>
+    
+    <link rel="stylesheet" href="./admin.css">
+
 </head>
 <body>
     <header>
-        <h1>Sistema Administrativo</h1>
-        <div class="user-info">
-            <span>Bienvenido, Administrador</span>
-            <div class="user-avatar">A</div>
-        </div>
+        <h1>Bienvenido Alumno David</h1>
     </header>
-
+    
     <nav>
-        <div class="nav-container">
-            <!-- Botón Principal -->
-            <div class="contenedor-boton">
-                <button class="boton-principal">
-                    <span>Principal</span>
-                    <span class="menu-icon">▼</span>
-                </button>
-                <div class="menu-desplegable">
-                    <button class="boton-secundario">Menú principal</button>
-                </div>
+        <!-- Botón Principal -->
+        <div class="menu-button">
+            <button class="dropdown-button">Principal</button>
+            <div class="dropdown-content">
+                <a href="#">Menú principal</a>
             </div>
-            
-            <!-- Botón Perfil -->
-            <div class="contenedor-boton">
-                <button class="boton-principal">
-                    <span>Perfil</span>
-                    <span class="menu-icon">▼</span>
-                </button>
-                <div class="menu-desplegable">
-                    <button class="boton-secundario">Consultar</button>
-                    <button class="boton-secundario">Editar</button>
-                </div>
+        </div>
+        
+        <!-- Botón Perfil -->
+        <div class="menu-button">
+            <button class="dropdown-button">Perfil</button>
+            <div class="dropdown-content">
+                <a href="#">Consultar</a>
+                <a href="#">Editar</a>
             </div>
-            
-            <!-- Botón Reportes -->
-            <div class="contenedor-boton">
-                <button class="boton-principal">
-                    <span>Reportes</span>
-                    <span class="menu-icon">▼</span>
-                </button>
-                <div class="menu-desplegable">
-                    <button class="boton-secundario">Crear</button>
-                    <button class="boton-secundario">Editar</button>
-                    <button class="boton-secundario">Consultar</button>
-                </div>
+        </div>
+        
+        <!-- Botón Reportes -->
+        <div class="menu-button">
+            <button class="dropdown-button">Reportes</button>
+            <div class="dropdown-content">
+                <a href="#">Crear</a>
+                <a href="#">Editar</a>
+                <a href="#">Consultar</a>
             </div>
-            
-            <!-- Botón Usuarios -->
-            <div class="contenedor-boton">
-                <button class="boton-principal">
-                    <span>Usuarios</span>
-                    <span class="menu-icon">▼</span>
-                </button>
-                <div class="menu-desplegable">
-                    <button class="boton-secundario">Crear</button>
-                    <button class="boton-secundario">Editar</button>
-                    <button class="boton-secundario">Consultar</button>
-                    <button class="boton-secundario">Eliminar</button>
-                </div>
+        </div>
+        
+        <!-- Botón Usuarios -->
+        <div class="menu-button">
+            <button class="dropdown-button">Usuarios</button>
+            <div class="dropdown-content">
+                <a href="#">Crear</a>
+                <a href="#">Editar</a>
+                <a href="#">Consultar</a>
+                <a href="#">Eliminar</a>
             </div>
-            
-            <!-- Botón Sesión -->
-            <div class="contenedor-boton">
-                <button class="boton-principal">
-                    <span>Sesión</span>
-                    <span class="menu-icon">▼</span>
-                </button>
-                <div class="menu-desplegable">
-                    <button class="boton-secundario">Cerrar sesión</button>
-                </div>
+        </div>
+        
+        <!-- Botón Sesión -->
+        <div class="menu-button">
+            <button class="dropdown-button">Sesión</button>
+            <div class="dropdown-content">
+                <a href="#">Cerrar sesión</a>
             </div>
-            
-            <!-- Botón Ayuda -->
-            <div class="contenedor-boton">
-                <button class="boton-principal">
-                    <span>Ayuda</span>
-                    <span class="menu-icon">▼</span>
-                </button>
-                <div class="menu-desplegable">
-                    <button class="boton-secundario">Contáctanos</button>
-                    <button class="boton-secundario">Búsqueda</button>
-                </div>
+        </div>
+        
+        <!-- Botón Ayuda -->
+        <div class="menu-button">
+            <button class="dropdown-button">Ayuda</button>
+            <div class="dropdown-content">
+                <a href="#">Contáctanos</a>
+                <a href="#">Búsqueda</a>
             </div>
         </div>
     </nav>
-
-    <main class="main-content">
-        <!-- Contenido principal -->
-        <div class="bienvenida">
-            <h2>Bienvenido al Sistema Administrativo</h2>
-            <p>Seleccione una opción del menú superior para comenzar</p>
-        </div>
-    </main>
-
-    <script src="admin.js" defer></script>
-
 </body>
-
 </html>
