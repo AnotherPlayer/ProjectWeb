@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosaicos y configuraciones geometricas</title>
+    <style>
+        body {
+            background: #e9ebf0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #366fa8;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        #contenedorPrincipal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        #puzzle {
+            background: #d0eb6a;
+            box-shadow: 0px 0px 15px 5px #e7931a;
+            width: 600px;
+            height: 600px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        #contenedorPiezas {
+            background: #e7931a;
+            width: 800px;
+            height: 150px;
+            box-shadow: 0px 0px 15px 5px #d0eb6a;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .contenedorPieza {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #puzzle .contenedorPieza img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #contenedorPiezas img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            cursor: move;
+            transition: all 0.2s;
+            border-radius: 5px;
+            border: 2px solid #366fa8;
+        }
+
+        #contenedorPiezas img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(0,0,0,0.4);
+            z-index: 10;
+        }
+    </style>
+
+    <script>
+        function start(e) {
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData("Text", e.target.id);
+            e.target.style.opacity = '0.4';
+        }
+
+        function end(e) {
+            e.target.style.opacity = '';
+            e.dataTransfer.clearData("Text");
+        }
+
+        function enter(e) {
+            return true;
+        }
+
+        function over(e) {
+            if ((e.target.className === "contenedorPieza") || (e.target.id === "contenedorPiezas"))
+                return false;
+            else
+                return true;
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            var elementoArrastrado = e.dataTransfer.getData("Text");
+            e.target.appendChild(document.getElementById(elementoArrastrado));
+            comprobarPuzzle();
+        }
+
+        function comprobarPuzzle() {
+            if (
+                document.getElementById('pieza1').parentNode.id === 'uno' &&
+                document.getElementById('pieza2').parentNode.id === 'dos' &&
+                document.getElementById('pieza3').parentNode.id === 'tres' &&
+                document.getElementById('pieza4').parentNode.id === 'cuatro' &&
+                document.getElementById('pieza5').parentNode.id === 'cinco' &&
+                document.getElementById('pieza6').parentNode.id === 'seis' &&
+                document.getElementById('pieza7').parentNode.id === 'siete' &&
+                document.getElementById('pieza8').parentNode.id === 'ocho' &&
+                document.getElementById('pieza9').parentNode.id === 'nueve'
+            ) {
+                alert('¡Felicidades, has completado el rompecabezas!');
+            }
+        }
+
+        function comprobarNavegador() {
+            let ua = navigator.userAgent.toLowerCase();
+            if ((ua.indexOf('msie') > -1 || ua.indexOf('safari') > -1) && ua.indexOf('chrome') === -1) {
+                alert("Su navegador no soporta las funciones Drag & Drop de HTML, por favor pruebe otro navegador.");
+            }
+        }
+    </script>
+</head>
+
+<body onload="comprobarNavegador();">
+    <header>
+        <h1><strong>Arma el siguiente mantel de figuras.</strong></h1>
+    </header>
+
+    <section id="contenedorPrincipal">
+        <div id="puzzle">
+            <div class="contenedorPieza" id="uno" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="dos" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="tres" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="cuatro" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="cinco" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="seis" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="siete" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="ocho" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+            <div class="contenedorPieza" id="nueve" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)"></div>
+        </div>
+
+        <div id="contenedorPiezas" ondragenter="return enter(event)" ondragover="return over(event)" ondrop="return drop(event)">
+            <img id="pieza1" src="./piezaG.jpg" alt="pieza1" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza2" src="./piezaG.jpg" alt="pieza2" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza3" src="./piezaG.jpg" alt="pieza3" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza4" src="./piezaG.jpg" alt="pieza4" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza5" src="./piezaG.jpg" alt="pieza5" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza6" src="./piezaG.jpg" alt="pieza6" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza7" src="./piezaG.jpg" alt="pieza7" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza8" src="./piezaG.jpg" alt="pieza8" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+            <img id="pieza9" src="./piezaG.jpg" alt="pieza9" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+        </div>
+    </section>
+
+    <a href="./../4/drananddropcanva.html">
+        <button type="button">Página siguiente</button>
+    </a>
+
+</body>
+</html>

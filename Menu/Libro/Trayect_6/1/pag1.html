@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Tamaños</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Estilos para las pestañas */
+        .tab-container {
+            margin-bottom: 20px;
+        }
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 5px;
+        }
+        .tab-btn.active {
+            background: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Estilos comunes */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            min-height: 27px;
+        }
+        .highlight {
+            border-color: #4CAF50 !important;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+        .error-input {
+            border-color: #ff4444 !important;
+        }
+        
+        /* Estilos específicos para el formulario de sofás */
+        .imagenes-sofa { 
+            margin: 20px; 
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .imagen-sofa { 
+            display: inline-block; 
+            margin: 10px; 
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .imagen-sofa:hover { 
+            border-color: #ccc; 
+        }
+        .seleccionada { 
+            border-color: #4CAF50 !important; 
+        }
+        
+        /* Estilos específicos para el formulario de longitudes */
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .image-input {
+            margin: 15px;
+            text-align: center;
+        }
+        .image-input img {
+            max-width: 200px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .image-input input {
+            width: 100px;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparador de Tamaños</h1>
+    
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="openTab('sofa')">Comparar Sofás</button>
+            <button class="tab-btn" onclick="openTab('longitud')">Medir Longitudes</button>
+        </div>
+        
+        <!-- Formulario para comparar sofás -->
+        <div id="sofa" class="tab-content active">
+            <h2>¿Cuál es el sofá más grande?</h2>
+            
+            <div class="imagenes-sofa">
+                <img src="./sofa1.png" alt="Sofá 1" class="imagen-sofa" data-size="2 lugares" onclick="seleccionarSofa(this, 1)">
+                <img src="./sofa2.png" alt="Sofá 2" class="imagen-sofa" data-size="3 lugares" onclick="seleccionarSofa(this, 2)">
+                <img src="./sofa3.png" alt="Sofá 3" class="imagen-sofa" data-size="5 lugares" onclick="seleccionarSofa(this, 3)">
+            </div>
+            
+            <button onclick="verificarSofa()">Verificar</button>
+            
+            <div id="resultado-sofa" class="resultado"></div>
+        </div>
+        
+        <!-- Formulario para medir longitudes -->
+        <div id="longitud" class="tab-content">
+            <h2>Identifica el objeto más largo</h2>
+            <p>Ingresa la longitud de cada imagen (puedes usar decimales) y descubre cuál es la más larga.</p>
+            
+            <div class="image-container">
+                <div class="image-input">
+                    <img src="./1.1.jpg" alt="Imagen 1" id="img1">
+                    <div>
+                        <label for="length1">Longitud (cm):</label><br>
+                        <input type="number" id="length1" placeholder="Ej: 12.5" step="0.01" min="0" class="length-input">
+                    </div>
+                </div>
+                
+                <div class="image-input">
+                    <img src="./1.2.jpg" alt="Imagen 2" id="img2">
+                    <div>
+                        <label for="length2">Longitud (cm):</label><br>
+                        <input type="number" id="length2" placeholder="Ej: 12.5" step="0.01" min="0" class="length-input">
+                    </div>
+                </div>
+                
+                <div class="image-input">
+                    <img src="./1.3.jpg" alt="Imagen 3" id="img3">
+                    <div>
+                        <label for="length3">Longitud (cm):</label><br>
+                        <input type="number" id="length3" placeholder="Ej: 12.5" step="0.01" min="0" class="length-input">
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="calcularLongitud()">Calcular</button>
+            
+            <div id="result" class="resultado"></div>
+        </div>
+    </div>
+
+    <a href="./../2/pag2.html">
+        <button type="button">Página siguiente</button>
+    </a>
+    
+    <script>
+        // Variables para el formulario de sofás
+        let seleccionSofa = null;
+        const correctaSofa = 3; // El sofá 3 es el más grande (5 lugares)
+        
+        // Funciones para el formulario de sofás
+        function seleccionarSofa(img, num) {
+            // Quitar selección anterior
+            document.querySelectorAll('.imagen-sofa').forEach(i => {
+                i.classList.remove('seleccionada');
+            });
+            
+            // Seleccionar nueva imagen
+            img.classList.add('seleccionada');
+            seleccionSofa = num;
+        }
+        
+        function verificarSofa() {
+            const resultado = document.getElementById('resultado-sofa');
+            
+            if (!seleccionSofa) {
+                resultado.textContent = "Por favor selecciona un sofá";
+                resultado.style.color = "red";
+                return;
+            }
+            
+            if (seleccionSofa === correctaSofa) {
+                resultado.textContent = "¡Correcto! El sofá más grande es el número 3, tiene 5 lugares.";
+                resultado.style.color = "green";
+            } else {
+                const lugares = {
+                    1: "2 lugares",
+                    2: "3 lugares",
+                    3: "5 lugares"
+                };
+                resultado.textContent = `Incorrecto. Seleccionaste el sofá ${seleccionSofa} (${lugares[seleccionSofa]}). El más grande es el sofá 3 con 5 lugares.`;
+                resultado.style.color = "red";
+            }
+        }
+        
+        // Funciones para el formulario de longitudes
+        function calcularLongitud() {
+            // Obtener elementos de input
+            const input1 = document.getElementById('length1');
+            const input2 = document.getElementById('length2');
+            const input3 = document.getElementById('length3');
+            
+            // Quitar clases de error previas
+            document.querySelectorAll('.length-input').forEach(input => {
+                input.classList.remove('error-input');
+            });
+            
+            // Validar entradas
+            let hasError = false;
+            const inputs = [input1, input2, input3];
+            
+            inputs.forEach(input => {
+                if (input.value === '' || isNaN(parseFloat(input.value)) || parseFloat(input.value) < 0) {
+                    input.classList.add('error-input');
+                    hasError = true;
+                }
+            });
+            
+            if (hasError) {
+                document.getElementById('result').textContent = "Por favor ingresa valores numéricos válidos (pueden ser decimales) para todas las imágenes";
+                document.getElementById('result').style.color = "red";
+                return;
+            }
+            
+            // Obtener valores de longitud como números decimales
+            const length1 = parseFloat(input1.value);
+            const length2 = parseFloat(input2.value);
+            const length3 = parseFloat(input3.value);
+            
+            // Quitar resaltado anterior
+            document.querySelectorAll('.image-input img').forEach(img => {
+                img.classList.remove('highlight');
+            });
+            
+            // Encontrar la imagen más larga
+            const maxLength = Math.max(length1, length2, length3);
+            const resultDiv = document.getElementById('result');
+            
+            if (length1 === length2 && length2 === length3) {
+                document.getElementById('img1').classList.add('highlight');
+                document.getElementById('img2').classList.add('highlight');
+                document.getElementById('img3').classList.add('highlight');
+                resultDiv.textContent = `Todas las imágenes tienen la misma longitud: ${maxLength.toFixed(2)} cm`;
+                resultDiv.style.color = "blue";
+            } else {
+                if (length1 === maxLength) document.getElementById('img1').classList.add('highlight');
+                if (length2 === maxLength) document.getElementById('img2').classList.add('highlight');
+                if (length3 === maxLength) document.getElementById('img3').classList.add('highlight');
+                
+                resultDiv.textContent = `La imagen más larga tiene ${maxLength.toFixed(2)} cm`;
+                resultDiv.style.color = "green";
+            }
+        }
+        
+        // Permitir que el cálculo se active con Enter
+        document.querySelectorAll('.length-input').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calcularLongitud();
+                }
+            });
+        });
+        
+        // Funciones para las pestañas
+        function openTab(tabName) {
+            // Ocultar todos los contenidos de pestañas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Desactivar todos los botones de pestañas
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Mostrar la pestaña actual y activar su botón
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla de Tamaños</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    td {
+      width: 100px;
+      height: 100px;
+      border: 2px solid black;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .circle {
+      border-radius: 50%;
+      background-color: gold;
+      margin: auto;
+    }
+    .s1 { width: 30px; height: 30px; }
+    .s2 { width: 50px; height: 50px; }
+    .s3 { width: 70px; height: 70px; }
+    .s4 { width: 90px; height: 90px; }
+
+    img {
+      width: 60px;
+      height: 60px;
+      cursor: grab;
+    }
+    .dropzone {
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Arrastra las imágenes a las celdas correctas según el tamaño del círculo y la imagen</h2>
+
+<table>
+  <tr>
+    <td></td>
+    <td><div class="circle s1"></div></td>
+    <td><div class="circle s2"></div></td>
+    <td><div class="circle s3"></div></td>
+    <td><div class="circle s4"></div></td>
+  </tr>
+  <tr>
+    <td><img src="./I1.jpg" draggable="false" alt="Icono 1"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+  </tr>
+  <tr>
+    <td><img src="./I2.jpg" draggable="false" alt="Icono 2"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+  </tr>
+  <tr>
+    <td><img src="./I3.jpg" draggable="false" alt="Icono 3"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+  </tr>
+  <tr>
+    <td><img src="./I4.jpg" draggable="false" alt="Icono 4"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+  </tr>
+</table>
+
+<!-- Zona de imágenes para arrastrar -->
+<div style="text-align:center; margin-top:30px;">
+  <h3>Imágenes para arrastrar:</h3>
+  <img src="./I4.1.jpg" id="drag1" draggable="true" ondragstart="drag(event)">
+  <img src="./I3.2.jpg" id="drag2" draggable="true" ondragstart="drag(event)">
+  <img src="./I2.3.jpg" id="drag3" draggable="true" ondragstart="drag(event)">
+  <img src="./I1.4.jpg" id="drag4" draggable="true" ondragstart="drag(event)">
+  
+  <img src="./I4.2.jpg" id="drag5" draggable="true" ondragstart="drag(event)">
+  <img src="./I3.3.jpg" id="drag6" draggable="true" ondragstart="drag(event)">
+  <img src="./I2.4.jpg" id="drag7" draggable="true" ondragstart="drag(event)">
+  <img src="./I1.1.jpg" id="drag8" draggable="true" ondragstart="drag(event)">
+  
+  <img src="./I4.3.jpg" id="drag9" draggable="true" ondragstart="drag(event)">
+  <img src="./I3.4.jpg" id="drag10" draggable="true" ondragstart="drag(event)">
+  <img src="./I2.1.jpg" id="drag11" draggable="true" ondragstart="drag(event)">
+  <img src="./I1.2.jpg" id="drag12" draggable="true" ondragstart="drag(event)">
+  
+  <img src="./I4.4.jpg" id="drag13" draggable="true" ondragstart="drag(event)">
+  <img src="./I3.1.jpg" id="drag14" draggable="true" ondragstart="drag(event)">
+  <img src="./I2.2.jpg" id="drag15" draggable="true" ondragstart="drag(event)">
+  <img src="./I1.3.jpg" id="drag16" draggable="true" ondragstart="drag(event)">
+</div>
+
+    <a href="./../../MenuLibro/Menu.html">
+        <button type="button">Página siguiente</button>
+    </a>
+
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const draggedImg = document.getElementById(data);
+  if (!ev.target.querySelector("img")) {
+    ev.target.appendChild(draggedImg);
+  }
+}
+</script>
+
+</body>
+</html>
