@@ -1,11 +1,10 @@
 <?php
     
-  if( !(count($_COOKIE) > 0) ){
+    if( !(count($_COOKIE) > 0) ){
 
-    // Si hay cookies, redirigir a la página de inicio
-    header("Location: ./../Menu.php");
+        header("Location: ./../Menu.php");
     
-  }
+    }
 
 ?>
 
@@ -199,8 +198,8 @@ nav {
                         <a href="./../Libro/Descargar/LibroWeb.pdf" download="LibroWeb.pdf">
                             <button class="menu-option">Libro descargable</button>
                         </a>
-                        <button class="menu-option">Videos locales</button>
-                        <button class="menu-option">Prácticas</button>
+                        <button class="menu-option" onclick="window.location.href='./../Libro/Videos_apoyo/menuVideos.php'">Videos</button>
+                        <button class="menu-option" onclick="window.location.href='./../Libro/Formulario/menuForm.php'">Prácticas</button>
                     </div>
                 </div>
             </div>

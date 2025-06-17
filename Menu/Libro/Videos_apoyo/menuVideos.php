@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú asociación</title>
-    
-    <link rel="stylesheet" href="menuMatch.css">
+    <title>Menú Videos</title>
+
+    <link rel="stylesheet" href="menuVideos.css">k
 
 </head>
+
 <body>
     <div class="container">
-        <h1>Ejercicios de Asociacion de columnas</h1>
+        <h1>Videos de apoyo</h1>
         <div class="menu" id="menu-unidades">
             <!-- Botones se generarán aquí con JavaScript -->
         </div>
@@ -28,7 +29,7 @@
                 
                 // Redirigir al hacer clic (cambia la ruta si es necesario)
                 boton.onclick = () => {
-                    window.location.href = `./Trayect${i}/match.html`; // Cambia esto si tus archivos tienen otro nombre
+                    window.location.href = `./Tema${i}/Video_0${i}.html`; // Cambia esto si tus archivos tienen otro nombre
                     // Alternativa: alert(`Ir a la Unidad ${i}`); // Para pruebas sin crear páginas
                 };
 
@@ -36,5 +37,7 @@
             }
         });
     </script>
+
 </body>
+
 </html>
