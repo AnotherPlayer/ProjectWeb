@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <script src="./jsFiles/profe.js" defer></script>
+    <script src="./profe.js" defer></script>
     
     <header>
         <h1>
@@ -49,8 +49,8 @@
         <div class="menu-button">
             <button class="dropdown-button">Perfil</button>
             <div class="dropdown-content">
-                <button class="menu-option">Consultar</button>
-                <button class="menu-option">Editar</button>
+                <button class="menu-option" onclick="showContent('Consultar')">Consultar</button>
+                <button class="menu-option" onclick="showContent('Editar')">Editar</button>
             </div>
         </div>
         
@@ -58,8 +58,8 @@
         <div class="menu-button">
             <button class="dropdown-button">Grupo</button>
             <div class="dropdown-content">
-                <button class="menu-option">Grupo</button>
-                <button class="menu-option">Alumno</button>
+                <button class="menu-option" onclick="showContent('Grupo')">Grupo</button>
+                <button class="menu-option" onclick="showContent('Alumno')">Alumno</button>
             </div>
         </div>
         

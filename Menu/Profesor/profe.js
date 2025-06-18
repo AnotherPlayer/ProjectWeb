@@ -1,4 +1,5 @@
-
+//Se anexo en la misma carpeta que profesor.php
+//Por algun motivo no se carga el js de profesor.php si se pone en la carpeta jsFiles
 async function showContent(option){
 
     try {

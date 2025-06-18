@@ -54,7 +54,10 @@
             </div>
         </div>
         
-        <!-- Botón Reportes -->
+        <!-- 
+        Botón Reportes 
+            La página para dicha función se hara dentro/fuera de esta página
+        -->
         <div class="menu-button">
             <button class="dropdown-button">Reportes</button>
             <div class="dropdown-content">
@@ -64,7 +67,10 @@
             </div>
         </div>
         
-        <!-- Botón Usuarios -->
+        <!-- 
+        Botón Usuarios
+            La página para dicha función se hara dentro/fuera de esta página
+        -->
         <div class="menu-button">
             <button class="dropdown-button">Usuarios</button>
             <div class="dropdown-content">
