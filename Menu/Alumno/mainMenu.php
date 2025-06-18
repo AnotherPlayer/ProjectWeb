@@ -7,11 +7,24 @@
 </head>
 <body>
 
-    <h1>Menú principal</h1>
+    <h1>
+        
+        <?php echo "!Bienvenido ".$_COOKIE['nombre']."¡"; ?>
+        
+    </h1>
 
     <p>
-        <?php echo "Bienvenido ".$_COOKIE['nombre']."al menú principal"; ?>
+        Te damos la bienvenida a tu menú de usuario, donde podrás:
     </p>
+
+    <ul>
+        <li>Consultar tus datos</li>
+        <li>Actualizar tu información personal</li>
+        <li>Interactuar con los recursos implementados</li>
+        <li>Realizar evaluaciones</li>
+    </ul>
+
+
     
 </body>
 </html>
