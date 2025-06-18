@@ -2,7 +2,7 @@
     
     if( !(count($_COOKIE) > 0) ){
 
-        header("Location: ./../Menu.php");
+        header("Location: ./../Menu.php");//Cerrar sesión si no hay cookies
     
     }
 
@@ -122,12 +122,16 @@ nav {
     <header>
         <h1>
 
-        <?php 
+        <div>Bienvenido</div>
+
+        <div>
+            <?php 
             // Mostrar el nombre del usuario almacenado en la cookie
             if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo']))
-                echo "Bienvenido ".$_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
+                echo $_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
             
-        ?>
+            ?>
+        </div>
 
         </h1>
     </header>
@@ -241,9 +245,8 @@ nav {
         </div>
     </nav>
 
-    <main class="main-content" id="main">
-
-
+    <!-- Contenido principal que varia de acuerdo con el botón seleccionado -->
+    <main class="main-content" id="main"> 
 
     </main>
 

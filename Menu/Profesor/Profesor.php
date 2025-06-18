@@ -16,12 +16,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profesor</title>
     
-  <link rel="stylesheet" href="./styles/profe.css">
+    <link rel="stylesheet" href="./styles/profe.css">
 
 </head>
 <body>
 
-<script src="./jsFiles/profe.js"></script>
+    <script src="./jsFiles/profe.js" defer></script>
     
     <header>
         <h1>
@@ -41,7 +41,7 @@
         <div class="menu-button">
             <button class="dropdown-button">Principal</button>
             <div class="dropdown-content">
-                <button class="menu-option">Menú principal</button>
+                <button class="menu-option" onclick="showContent('mainMenu')">Menú principal</button>
             </div>
         </div>
         
@@ -104,5 +104,11 @@
             </div>
         </div>
     </nav>
+
+    <!-- Contenido principal que varia de acuerdo con el botón seleccionado -->
+    <main class="main-content" id="main"> 
+
+    </main>
+
 </body>
 </html>

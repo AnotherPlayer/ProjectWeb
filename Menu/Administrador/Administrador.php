@@ -21,7 +21,7 @@
 </head>
 <body>
 
-  <script src="./jsFiles/admin.js"></script>
+    <script src="./jsFiles/admin.js" defer></script>
     
     <header>
         <h1>
@@ -41,7 +41,7 @@
         <div class="menu-button">
             <button class="dropdown-button">Principal</button>
             <div class="dropdown-content">
-                <button class="menu-option">Menú principal</button>
+                <button class="menu-option" onclick="showContent('mainMenu')">Menú principal</button>
             </div>
         </div>
         
@@ -49,8 +49,8 @@
         <div class="menu-button">
             <button class="dropdown-button">Perfil</button>
             <div class="dropdown-content">
-                <button class="menu-option">Consultar</button>
-                <button class="menu-option">Editar</button>
+                <button class="menu-option" onclick="showContent('Consultar')">Consultar</button>
+                <button class="menu-option" onclick="showContent('Editar')">Editar</button>
             </div>
         </div>
         
@@ -58,9 +58,9 @@
         <div class="menu-button">
             <button class="dropdown-button">Reportes</button>
             <div class="dropdown-content">
-                <button class="menu-option">Crear</button>
-                <button class="menu-option">Editar</button>
-                <button class="menu-option">Consultar</button>
+                <button class="menu-option" onclick="showContent('DOfile')">Crear</button>
+                <button class="menu-option" onclick="showContent('DOedit')">Editar</button>
+                <button class="menu-option" onclick="showContent('DOcheck')">Consultar</button>
             </div>
         </div>
         
@@ -97,5 +97,12 @@
             </div>
         </div>
     </nav>
+
+    <!-- Contenido principal que varia de acuerdo con el botón seleccionado -->
+    <main class="main-content" id="main"> 
+
+    </main>
+
 </body>
+
 </html>

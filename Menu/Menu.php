@@ -24,17 +24,12 @@
 
   <header>
     <div class="logo">logo</div>
-    <div class="titulo">Sitio web matematicas primaria</div>
+    <div class="titulo">Matemáticas divertidas</div>
   </header>
 
   <nav>
     <div class="menu-item">
       <button class="menu-button">Principal</button>
-      <div class="submenu">
-        <a href="#">Inicio</a>
-        <a href="#">Resumen</a>
-        <a href="#">Noticias</a>
-      </div>
     </div>
 
     <div class="menu-item">
@@ -42,27 +37,15 @@
     </div>
 
     <div class="menu-item">
-      <button class="menu-button">Preguntas frecuentes</button>
-      <div class="submenu">
-        <a href="#">Cuenta</a>
-        <a href="#">Soporte</a>
-      </div>
+      <button class="menu-button" onclick="window.location.href='./preguFrec.html'">Preguntas frecuentes</button>
     </div>
 
     <div class="menu-item">
-      <button class="menu-button">Contacto</button>
-      <div class="submenu">
-        <a href="#">Correo</a>
-        <a href="#">Teléfono</a>
-      </div>
+      <button class="menu-button" onclick="window.location.href='./Contacto.html'">Contacto</button>
     </div>
 
     <div class="menu-item">
-      <button class="menu-button">Ayuda</button>
-      <div class="submenu">
-        <a href="#">Manual de usuario</a>
-        <a href="#">Busqueda</a>
-      </div>
+      <button class="menu-button" onclick="window.location.href='./Ayuda.html'">Ayuda</button>
     </div>
   </nav>
 
