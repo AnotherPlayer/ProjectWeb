@@ -101,8 +101,8 @@
       </form>
 
       <div class="links">
-        <a href="#">Registrarse</a><br>
-        <a href="#">¿Olvidó su contraseña?</a>
+        <a href="./Registro.php">Registrarse</a><br>
+        <a href="./olvidoPassword.php">¿Olvidó su contraseña?</a>
       </div>
       
     </aside>

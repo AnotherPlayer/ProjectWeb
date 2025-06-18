@@ -11,6 +11,8 @@
 <!DOCTYPE html>
 <html lang="es">
     
+<script src="./alumno.js"></script>
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,6 +117,8 @@ nav {
 
 <body>
 
+    <script src="./jsFiles/alumno.js" defer></script>
+
     <header>
         <h1>
 
@@ -133,7 +137,7 @@ nav {
         <div class="menu-button">
             <button class="dropdown-button">Principal</button>
             <div class="dropdown-content">
-                <button class="menu-option">Menú principal</button>
+                <button class="menu-option" onclick="showContent('mainMenu')">Menú principal</button>
             </div>
         </div>
         
@@ -141,8 +145,8 @@ nav {
         <div class="menu-button">
             <button class="dropdown-button">Perfil</button>
             <div class="dropdown-content">
-                <button class="menu-option">Consultar</button>
-                <button class="menu-option">Editar</button>
+                <button class="menu-option" onclick="showContent('Consultar')">Consultar</button>
+                <button class="menu-option" onclick="showContent('Editar')">Editar</button>
             </div>
         </div>
         
@@ -237,7 +241,11 @@ nav {
         </div>
     </nav>
 
+    <main class="main-content" id="main">
 
+
+
+    </main>
 
 </body>
 

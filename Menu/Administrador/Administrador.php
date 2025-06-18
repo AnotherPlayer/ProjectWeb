@@ -16,10 +16,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
     
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="./styles/admin.css">
 
 </head>
 <body>
+
+  <script src="./jsFiles/admin.js"></script>
     
     <header>
         <h1>
