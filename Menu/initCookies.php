@@ -22,7 +22,7 @@
     }
     
     else {
-        header("Location: ./Menu.php");
+        header("Location: ./newMenu/main.php");
     }
 
     mysqli_close($conexion);

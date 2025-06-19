@@ -15,4 +15,13 @@ else {
      //echo "Connected successfully";
 }
 
+//Metodología
+//Derchos de autor
+//Estimación
+//Estandares - Requrimientos
+//Tipos de pruebas (caja negra/blanca)
+//  Casos de pruebas
+
 ?>
+
+
