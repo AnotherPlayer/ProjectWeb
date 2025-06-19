@@ -3,10 +3,10 @@ async function showContent(option){
 
     try {
 
-         const response = await fetch(`${option}.php`);
+        const response = await fetch(`${option}.php`);
             
-            if (!response.ok)
-                throw new Error("Archivo no encontrado");
+        if (!response.ok)
+            throw new Error("Archivo no encontrado");
                 
         const html = await response.text();
         document.getElementById("main").innerHTML = html;

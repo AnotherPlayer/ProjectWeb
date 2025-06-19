@@ -1,15 +1,32 @@
 
 async function showContent(option){
 
+    console.log("Cargando contenido para:", option);
+
     try {
 
-         const response = await fetch(`${option}.html`);
+        if(option === "main"){
+
+            const response = await fetch(`${option}.php`);
+                
+            if (!response.ok)
+                throw new Error("Archivo no encontrado");
+                    
+            const html = await response.text();
+            document.getElementById("main").innerHTML = html;
+
+        }
+        else{
+
+            const response = await fetch(`${option}.html`);
             
             if (!response.ok)
                 throw new Error("Archivo no encontrado");
                 
-        const html = await response.text();
-        document.getElementById("main").innerHTML = html;
+            const html = await response.text();
+            document.getElementById("main").innerHTML = html;
+
+        }
 
     }
     
