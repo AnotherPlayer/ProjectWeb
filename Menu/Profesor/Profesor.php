@@ -39,10 +39,7 @@
     <nav>
         <!-- Botón Principal -->
         <div class="menu-button">
-            <button class="dropdown-button">Principal</button>
-            <div class="dropdown-content">
-                <button class="menu-option" onclick="showContent('mainMenu')">Menú principal</button>
-            </div>
+            <button class="dropdown-button" onclick="showContent('mainMenu')">Principal</button>
         </div>
         
         <!-- Botón Perfil -->

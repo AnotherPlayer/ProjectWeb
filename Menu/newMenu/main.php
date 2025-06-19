@@ -90,10 +90,6 @@
     </aside>
   </main>
 
-  <footer>
-    <p>Copyright © 2024 TecWeb | ® Todos los derechos reservados</p>
-    <p><a href="mailto:hd.gt2005@gmail.com">hd.gt2005@gmail.com</a></p>
-  </footer>
 </body>
 </html>
 </section>

@@ -1,11 +1,10 @@
 <?php
     
-  if( !(count($_COOKIE) > 0) ){
+    if( !(count($_COOKIE) > 0) ){
 
-    // Si hay cookies, redirigir a la página de inicio
-    header("Location: ./../newMenu/main.php");//Cerrar sesión si no hay cookies
+        header("Location: ./../newMenu/main.php");//Cerrar sesión si no hay cookies
     
-  }
+    }
 
 ?>
 
@@ -18,6 +17,73 @@
     
     <link rel="stylesheet" href="./styles/admin.css">
 
+    <style>
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #2434e7;
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 0;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background-color: #d1d9ff;
+    border-bottom: 1px solid #b3b8e5;
+    flex-wrap: wrap;
+}
+
+.menu-button {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button, .menu-option {
+    background-color: #5c6bc0;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    min-width: 100px;
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin: 2px 0;
+}
+
+.dropdown-button:hover, .menu-option:hover {
+    background-color: #3f51b5;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menu-button:hover .dropdown-content {
+    display: block;
+}
+
+    </style>
+
 </head>
 <body>
 
@@ -26,16 +92,12 @@
     <header>
         <h1>
 
-        <div class="left-head">Bienvenido</div>
-
-        <div class="right-head">
-            <?php 
+        <?php 
             // Mostrar el nombre del usuario almacenado en la cookie
             if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo']))
-                echo $_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
+                echo "Bienvenido ".$_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
             
-            ?>
-        </div>
+        ?>
 
         </h1>
     </header>
@@ -43,10 +105,7 @@
     <nav>
         <!-- Botón Principal -->
         <div class="menu-button">
-            <button class="dropdown-button">Principal</button>
-            <div class="dropdown-content">
-                <button class="menu-option" onclick="showContent('mainMenu')">Menú principal</button>
-            </div>
+            <button class="dropdown-button" onclick="showContent('mainMenu')">Principal</button>
         </div>
         
         <!-- Botón Perfil -->
@@ -65,9 +124,9 @@
         <div class="menu-button">
             <button class="dropdown-button">Reportes</button>
             <div class="dropdown-content">
-                <button class="menu-option" onclick="showContent('DOfile')">Crear</button>
-                <button class="menu-option" onclick="showContent('DOedit')">Editar</button>
-                <button class="menu-option" onclick="showContent('DOcheck')">Consultar</button>
+                <button class="menu-option" onclick="showContent('reports')">Crear</button>
+                <button class="menu-option" onclick="showContent('reports')">Editar</button>
+                <button class="menu-option" onclick="showContent('reports')">Consultar</button>
             </div>
         </div>
         
@@ -78,10 +137,10 @@
         <div class="menu-button">
             <button class="dropdown-button">Usuarios</button>
             <div class="dropdown-content">
-                <button class="menu-option">Crear</button>
-                <button class="menu-option">Editar</button>
-                <button class="menu-option">Consultar</button>
-                <button class="menu-option">Eliminar</button>
+                <button class="menu-option" onclick="showContent('changeUser')">Crear</button>
+                <button class="menu-option" onclick="showContent('changeUser')">Editar</button>
+                <button class="menu-option" onclick="showContent('changeUser')">Consultar</button>
+                <button class="menu-option" onclick="showContent('changeUser')">Eliminar</button>
             </div>
         </div>
         

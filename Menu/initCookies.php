@@ -17,7 +17,7 @@
         setcookie("nombre", $row['nombre'], time() + (60*$minutos), "/");
         setcookie("boleta", $row['boleta'], time() + (60*$minutos), "/");
         setcookie("tipo", $tipo, time() + (60*$minutos), "/");
-        header("Location: ./$tipo/$tipo.php");
+        header("Location: ./Administrador/Administrador.php");
 
     }
     
