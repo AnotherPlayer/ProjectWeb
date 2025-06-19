@@ -6,21 +6,10 @@ body {
 }
 
 header {
-    background-color: #dba511;
+    background-color: #3b3c7e;
     color: white;
     padding: 15px 20px;
     margin-bottom: 0;
-}
-
-.left-header {
-    display: flex;
-    align-items: left;
-}
-
-.right-header {
-    display: flex;
-    align-items: right;
-    justify-content: flex-end;
 }
 
 nav {
@@ -55,19 +44,4 @@ nav {
 
 .dropdown-button:hover, .menu-option:hover {
     background-color: #3f51b5;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.menu-button:hover .dropdown-content {
-    display: block;
 }

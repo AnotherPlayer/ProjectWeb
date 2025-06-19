@@ -26,12 +26,16 @@
     <header>
         <h1>
 
-        <?php 
+        <div class="left-head">Bienvenido</div>
+
+        <div class="right-head">
+            <?php 
             // Mostrar el nombre del usuario almacenado en la cookie
-            if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo'])) {
-                echo "Bienvenido ".$_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
-            }
-        ?>
+            if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo']))
+                echo $_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
+            
+            ?>
+        </div>
 
         </h1>
     </header>
