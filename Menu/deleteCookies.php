@@ -4,6 +4,6 @@
         setcookie("boleta", "", time() - 3600, "/");
         setcookie("tipo", "", time() - 3600, "/");
         
-        header("Location: ./Menu.php");
+        header("Location: ./newMenu/main.php");
 
 ?>

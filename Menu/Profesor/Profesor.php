@@ -3,7 +3,7 @@
   if( !(count($_COOKIE) > 0) ){
 
     // Si hay cookies, redirigir a la página de inicio
-    header("Location: ./../Menu.php");
+    header("Location: ./../newMenu/main.php");//Cerrar sesión si no hay cookies
     
   }
 

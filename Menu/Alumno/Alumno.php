@@ -2,7 +2,7 @@
     
     if( !(count($_COOKIE) > 0) ){
 
-        header("Location: ./../Menu.php");//Cerrar sesión si no hay cookies
+        header("Location: ./../newMenu/main.php");//Cerrar sesión si no hay cookies
     
     }
 
