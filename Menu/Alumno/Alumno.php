@@ -144,11 +144,7 @@ nav {
         
         <!-- Botón Perfil -->
         <div class="menu-button">
-            <button class="dropdown-button">Perfil</button>
-            <div class="dropdown-content">
-                <button class="menu-option" onclick="showContent('Consultar')">Consultar</button>
-                <button class="menu-option" onclick="showContent('Editar')">Editar</button>
-            </div>
+            <button class="dropdown-button" onclick="showContent('Consultar')">Perfil</button>
         </div>
         
         <!-- Botón Bloques -->

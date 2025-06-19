@@ -1,3 +1,13 @@
+<?php
+
+    include './../conexion.php';
+    
+    $query = "SELECT * FROM ".$_COOKIE['tipo']." WHERE boleta = ".$_COOKIE['boleta'];
+    $result = $conexion->query($query);
+    $row = $result->fetch_assoc();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -134,23 +144,28 @@
 </head>
 <body>
     <header class="encabezado">
-        <div class="avatar">JP</div>
-        <h1>¡Bienvenido, Juan Pérez!</h1>
-        <p>4° Primaria - Grupo A</p>
+        <div class="avatar">A</div>
+        <h1>
+            <?php
+                echo "Bienvenido " . $row['nombre'] ."!";
+            ?>
+        </h1>
+        <p>
+            <?php
+                echo "Del grupo " . $row['grupo'] ."!";
+            ?>
+        </p>
     </header>
 
     <main class="contenido-principal">
         <section class="bienvenida">
             <h1><i class="fas fa-smile"></i> ¡Hola de nuevo!</h1>
             <p>Estamos felices de tenerte aquí. Desde tu panel podrás acceder a tus clases, tareas y recursos educativos.</p>
-            <p>Hoy es <strong id="fecha"></strong> y tienes <strong>2 actividades pendientes</strong>.</p>
+            <p>Hoy es <strong id="fecha"></strong>.</p>
             
             <div class="botones">
-                <a href="#" class="boton boton-primario">
-                    <i class="fas fa-book-open"></i> Mis Cursos
-                </a>
-                <a href="#" class="boton boton-secundario">
-                    <i class="fas fa-tasks"></i> Ver Tareas
+                <a href="./../Libro/MenuLibro/Menu.html" class="boton boton-primario">
+                    <i class="fas fa-book-open"></i> Libro
                 </a>
             </div>
         </section>
