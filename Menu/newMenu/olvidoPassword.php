@@ -22,7 +22,8 @@
     <div class="recovery-container">
         <p class="instructions">Ingresa tu correo electrónico registrado y te enviaremos un enlace para restablecer tu contraseña.</p>
         
-        <form id="recoveryForm">
+        <form method="post" action="./../sendMail.php">
+
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
                 <input type="email" id="email" name="email" required>
@@ -39,20 +40,6 @@
             <a href="./Menu.php">« Volver al inicio de sesión</a>
         </div>
     </div>
-
-    <script>
-        document.getElementById('recoveryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulación de envío
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Descomenta para limpiar el formulario
-            // this.reset();
-            
-            // Descomenta para redireccionar después de 3 segundos
-            // setTimeout(() => { window.location.href = 'login.html'; }, 3000);
-        });
-    </script>
+    
 </body>
 </html>

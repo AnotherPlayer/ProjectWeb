@@ -122,13 +122,11 @@ nav {
     <header>
         <h1>
 
-        <div>Bienvenido</div>
-
         <div>
             <?php 
             // Mostrar el nombre del usuario almacenado en la cookie
             if(isset($_COOKIE['nombre']) && isset($_COOKIE['tipo']))
-                echo $_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
+                echo "Bienvenidos ".$_COOKIE['tipo'] ." ".$_COOKIE['nombre'];
             
             ?>
         </div>
@@ -229,13 +227,15 @@ nav {
         </div>
         
         <!-- Botón Ayuda -->
+        <!--
         <div class="menu-button">
             <button class="dropdown-button">Ayuda</button>
             <div class="dropdown-content">
-                <button class="menu-option">Manual de usuario</button>
-                <button class="menu-option">Búsqueda</button>
+            <button class="menu-option">Manual de usuario</button>
+            <button class="menu-option">Búsqueda</button>
             </div>
         </div>
+        -->
     </nav>
 
     <!-- Contenido principal que varia de acuerdo con el botón seleccionado -->

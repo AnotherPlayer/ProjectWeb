@@ -161,7 +161,6 @@
         <section class="bienvenida">
             <h1><i class="fas fa-smile"></i> ¡Hola de nuevo!</h1>
             <p>Estamos felices de tenerte aquí. Desde tu panel podrás acceder a tus clases, tareas y recursos educativos.</p>
-            <p>Hoy es <strong id="fecha"></strong>.</p>
             
             <div class="botones">
                 <a href="./../Libro/MenuLibro/Menu.html" class="boton boton-primario">
@@ -172,16 +171,7 @@
     </main>
 
     <footer>
-        <p>Sistema Escolar Primaria © 2023</p>
+        <p>Matemáticas divertidas © 2024</p>
     </footer>
-
-    <script>
-        // Mostrar fecha actual
-        const opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const fecha = new Date().toLocaleDateString('es-ES', opcionesFecha);
-        document.getElementById('fecha').textContent = fecha;
-
-        // Ejemplo: Podrías agregar aquí la carga dinámica de actividades pendientes
-    </script>
 </body>
 </html>

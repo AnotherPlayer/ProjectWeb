@@ -22,7 +22,7 @@
   
     <div class="contenedor-perfil">
         <div class="encabezado-perfil">
-            <div class="avatar">JP</div>
+            <div class="avatar">A</div>
             <h1 class="nombre-usuario">
               <?php
                 echo $row['nombre'];

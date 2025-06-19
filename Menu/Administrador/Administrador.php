@@ -110,11 +110,7 @@ nav {
         
         <!-- Botón Perfil -->
         <div class="menu-button">
-            <button class="dropdown-button">Perfil</button>
-            <div class="dropdown-content">
-                <button class="menu-option" onclick="showContent('Consultar')">Consultar</button>
-                <button class="menu-option" onclick="showContent('Editar')">Editar</button>
-            </div>
+            <button class="dropdown-button" onclick="showContent('Consultar')">Perfil</button>
         </div>
         
         <!-- 
@@ -122,12 +118,7 @@ nav {
             La página para dicha función se hara dentro/fuera de esta página
         -->
         <div class="menu-button">
-            <button class="dropdown-button">Reportes</button>
-            <div class="dropdown-content">
-                <button class="menu-option" onclick="showContent('reports')">Crear</button>
-                <button class="menu-option" onclick="showContent('reports')">Editar</button>
-                <button class="menu-option" onclick="showContent('reports')">Consultar</button>
-            </div>
+            <button class="dropdown-button" onclick="showContent('reports')">Reportes</button>
         </div>
         
         <!-- 
@@ -135,13 +126,7 @@ nav {
             La página para dicha función se hara dentro/fuera de esta página
         -->
         <div class="menu-button">
-            <button class="dropdown-button">Usuarios</button>
-            <div class="dropdown-content">
-                <button class="menu-option" onclick="showContent('changeUser')">Crear</button>
-                <button class="menu-option" onclick="showContent('changeUser')">Editar</button>
-                <button class="menu-option" onclick="showContent('changeUser')">Consultar</button>
-                <button class="menu-option" onclick="showContent('changeUser')">Eliminar</button>
-            </div>
+            <button class="dropdown-button" onclick="showContent('changeUser')">Usuarios</button>
         </div>
         
         <!-- Botón Sesión -->

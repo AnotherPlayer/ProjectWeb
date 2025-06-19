@@ -24,9 +24,9 @@
 
 <body>
   <header>
-    <div class="logo">
+    <!-- <div class="logo">
       <img src="./assets/Logo.jpe" alt="Logo Matemáticas Divertidas">
-    </div>
+    </div> -->
     <div class="titulo">Matemáticas divertidas</div>
   </header>
 
@@ -50,12 +50,12 @@
 
   <main>
     <section class="izquierda">
-      <p><strong>menú desplegable</strong> en forma de acordeón con efectos de botones <strong>inactivo</strong>, <strong>sobre de</strong> y <strong>activo</strong></p>
-      <p><strong>efectos del menú:</strong></p>
+      <p>Usa el menú para navegar por las secciones. Los colores indican si un botón está activo, seleccionado o inactivo.</p>
+      <p>Con los siguientes tipos de usuarios:</p>
       <ul>
-        <li><span class="dot sobre"></span> sobre de</li>
-        <li><span class="dot activo"></span> activo</li>
-        <li><span class="dot inactivo"></span> inactivo</li>
+        <li><span class="dot sobre"></span> Alumno</li>
+        <li><span class="dot activo"></span> Profesor</li>
+        <li><span class="dot inactivo"></span> Administrador</li>
       </ul>
     </section>
 
