@@ -2,11 +2,27 @@
 
     include 'conexion.php';
 
-    $name = $_POST['mail'];
+    $name = $_POST['email'];
 
-    mail($name, "Recuperación de contraseña", "Haz click en el siguiente enlace para restablecer tu contraseña: http://localhost/Proyecto%20Final%20PHP/newMenu/olvidoPassword.php");
+    //mail($name, "Recuperación", "Hola que hace, esto es una prueba de envío de correo electrónico para la recuperación de contraseña.");
 
-    header("Location: ./newMenu/main.php");
+    //header("Location: ./newMenu/main.php");
+
+    $to = "hd.gt2005@gmail.com";
+    $subject = "My subject";
+    $txt = "Hello world!";
+    $headers = "From: hd.gt2005@gmail.com" . "\r\n" .
+    "CC: somebodyelse@example.com";
+
+    $mail = mail($to,$subject,$txt,$headers);
+
+    if($mail) {
+        echo "El correo se ha enviado correctamente.";
+    }
+    
+    else {
+        echo "Error al enviar el correo.";
+    }
     
 
 ?>

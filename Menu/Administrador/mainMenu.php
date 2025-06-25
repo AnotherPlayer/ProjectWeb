@@ -14,6 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenida - Sistema Escolar</title>
+
     <style>
         :root {
             --color-primario: #4361ee;
@@ -141,10 +142,11 @@
             }
         }
     </style>
+
 </head>
 <body>
     <header class="encabezado">
-        <div class="avatar">A</div>
+        <div class="avatar">Ad</div>
         <h1>
             <?php
                 echo "Bienvenido " . $row['nombre'] ."!";
@@ -155,12 +157,11 @@
     <main class="contenido-principal">
         <section class="bienvenida">
             <h1><i class="fas fa-smile"></i> ¡Hola de nuevo!</h1>
-            <p>Estamos felices de tenerte aquí. Desde tu panel podrás acceder a tus clases, tareas y recursos educativos.</p>
-            <p>Hoy es <strong id="fecha"></strong>.</p>
+            <p>Estamos felices de tenerte aquí. Desde tu panel podrás acceder a tu perfil, reportes y Usuario.</p>
             
             <div class="botones">
                 <a href="./../Libro/MenuLibro/Menu.html" class="boton boton-primario">
-                    <i class="fas fa-book-open"></i> Libro
+                    <i class="fas fa-book-open">Libro</i>
                 </a>
             </div>
         </section>

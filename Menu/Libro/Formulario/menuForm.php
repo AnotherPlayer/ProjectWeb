@@ -28,7 +28,7 @@
                 
                 // Redirigir al hacer clic (cambia la ruta si es necesario)
                 boton.onclick = () => {
-                    window.location.href = `unidad${i}.html`; // Cambia esto si tus archivos tienen otro nombre
+                    window.location.href = `./Trayect_${i}/form.html`; // Cambia esto si tus archivos tienen otro nombre
                     // Alternativa: alert(`Ir a la Unidad ${i}`); // Para pruebas sin crear páginas
                 };
 

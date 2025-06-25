@@ -31,10 +31,6 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--color-fondo);
-            color: var(--color-texto);
-            margin: 0;
-            padding: 20px;
         }
 
         .container {
@@ -48,10 +44,6 @@
         }
 
         h1 {
-            color: var(--color-primario);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--color-borde);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -73,7 +65,7 @@
         }
 
         th {
-            color: var(--color-primario);
+            color: white;
             padding: 15px;
             text-align: left;
             font-weight: 500;
