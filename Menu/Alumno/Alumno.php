@@ -241,6 +241,18 @@ nav {
     <!-- Contenido principal que varia de acuerdo con el botón seleccionado -->
     <main class="main-content" id="main"> 
 
+    <script>
+
+    const response = await fetch(`mainMenu.php`);
+
+    if (!response.ok)
+    throw new Error("Archivo no encontrado");
+             
+    const html = await response.text();
+    document.getElementById("main").innerHTML = html;
+
+    </script>
+
     </main>
 
 </body>

@@ -1,4 +1,3 @@
-
 async function showContent(option){
 
     try {
