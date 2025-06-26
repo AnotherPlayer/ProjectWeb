@@ -11,8 +11,6 @@
 
     $boleta = strval(mt_rand(100000000, 999999999));
 
-    
-
     $query = "INSERT INTO Alumno (nombre, ap_Pat, ap_Mat, boleta, correo, contraseña) VALUES ('$nombre', '$apPat', '$apMat', $boleta, '$email', '$password')";
     if ($conexion->query($query) === TRUE) {
         echo "Usuario creado exitosamente. Boleta: $boleta";
